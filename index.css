@@ -1,0 +1,375 @@
+body
+{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background: #780206;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#game_canvas
+{
+  
+}
+#background_canvas
+{
+
+    z-index: -1;
+    position: absolute;
+    left: 25%;
+}
+#play_button
+{
+    background-color:#3a6186;
+    border:none; 
+}
+#pause_button
+{
+    background-color:#3a6186;
+    border:none; 
+    
+}
+
+img{
+    width:50px;
+    height: 50px;
+}
+.container
+{
+    display: flex;
+    margin-left:100px;
+    margin-top: 100px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.game_sidebar
+{
+    display: flex;
+    flex-direction: column;
+    background: #3a6186;  /* fallback for old browsers */
+     height: 1000px;
+
+}
+.button_set
+{   
+    margin-top: 300px;
+    /* position: absolute;
+    top:30;
+    left:27%; */
+    align-self: center;
+    
+}
+.scorecard
+{   
+    margin-top: 30px;
+    width:200px;
+    height:100px;
+    /*
+    position: absolute;
+    top:30px;
+    left: 1300px; */
+    background-color: #c0392b;
+    color:white;
+    border-radius: 10%;
+    font-weight: bold;
+    margin: 10px;
+}
+.game_sidebar > h2
+{
+    margin-top:40px;
+    text-align: center;
+    color: white;
+}
+.power_meter
+{  
+   
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius:20px;
+    height:30px;
+}
+
+.power_meter_filled
+{
+    background: #3a6186;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   width:50%;
+   height:30px;
+  
+   border-radius:20px 
+}
+.scorecard > .scorecard_header
+{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+.scorecard > .score
+{
+    font-size: 24px;
+    text-align: center;
+}
+
+.leaderboard
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    grid-row: 1px;
+}
+.leaderboard > div > .header
+{
+    font-size: 24px;
+}
+
+.game_card
+{
+    
+    width:500px;
+    border-radius:6px;
+    background-color:white;
+    margin-top:200px;  
+}
+.game_card_header
+{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color:#414141;
+}
+.game_card > div > button:nth-child(1)
+{
+    background: white;
+    background:#ff5722;
+    font-size: 20px;
+    border:none;
+    color: white;
+    
+    padding: 20px;
+    border-radius: 0 0 0px 5px;
+    width: 250px;
+  
+}
+.game_card > div > button:nth-child(2)
+{
+    background: white;
+    background:#673ab7;
+    font-size: 20px;
+    border:none;
+    color: white;
+    width:250px;
+ 
+    padding:20px;
+    border-radius: 0 0 5px 0;
+    
+}
+.game_card > div > button:nth-child(1):hover
+{
+    padding-left:25px; 
+}
+.game_card > div > button:nth-child(2):hover
+{
+    padding-left:25px; 
+}
+
+.game_card 
+{
+   
+   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.button_set_player_choose
+{
+    display: flex;
+   
+
+ 
+     margin-top: 100px; 
+     margin-right: 0;
+    
+    
+}
+.start
+{
+    background: white;
+    background:#ff5722;
+    font-size: 20px;
+    border:none;
+    color: white;
+    
+    padding:20px;
+    margin-top: 30px;
+    
+    width: 500px;
+    margin-bottom:0;
+    border-radius:0 0 5px 5px; 
+  
+}
+
+.input_set
+{
+    margin-top:100px; 
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.input_set > input{
+    display:block;
+    height:50px;
+    width:90%;
+    margin:0 auto;
+    border:none;
+}  
+.input_set > input::placeholder{
+      -webkit-transform:translateY(0px);
+        transform:translateY(0px);
+      -webkit-transition:.5s;
+        transition:.5s;
+    }
+    .input_set > input:hover,
+    .input_set > input:focus,
+    .input_set > input:active:focus{
+      color:#ff5722;
+      outline:none;
+      border-bottom:1px solid #ff5722;
+    } 
+    .input_set > input::placeholder{
+        color:#ff5722;
+        position:relative;
+        -webkit-transform:translateY(-20px);
+        transform:translateY(-20px);
+        
+      
+    }
+
+
+ .header
+{
+    background-color:#1b1e24;
+    font-size: 23px;
+    color: #D5DDE5;
+    padding: 24px;
+    font-weight: 100;
+    height: 40px ;
+    border-right: 1px solid #343a45;
+    border-radius: 2px; 
+}
+
+.left
+{
+    border-radius:5px 0 0 0;
+
+}
+.right
+{
+    border-radius: 0 5px 0 0;
+}
+.element
+{
+   
+    font-size: 23px;
+    color: #666B85;
+    background-color: #f8f8f8;
+    padding: 24px;
+    font-weight: 100;
+    height: 40px ;
+}
+
+/* box shadow */
+.leaderboard
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.leaderboard:before, .leaderboard:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.leaderboard:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+.message
+{
+    width:500px;
+    border-radius:6px;
+    background-color:white;
+    margin-top:200px;  
+    margin-right: 30%;
+}
+.message_header
+{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color:#414141;
+}
+.play_again
+{
+    background: white;
+    background:#ff5722;
+    font-size: 20px;
+    border:none;
+    color: white;
+    
+    padding: 20px;
+    border-radius: 0 0 0px 5px;
+    width: 250px;
+}
+
+.main_menu
+{
+
+    background: white;
+    background:#673ab7;
+    font-size: 20px;
+    border:none;
+    color: white;
+    width:250px;
+ 
+    padding:20px;
+    border-radius: 0 0 5px 0;
+}
+
+.message_buttonset
+{
+    display: flex;
+   
+
+ 
+    margin-top: 100px; 
+    margin-right: 0;
+   
+}
+
+.two_player_message
+{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
