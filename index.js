@@ -25,25 +25,25 @@ function startGame(n)
         a.name =  player1_name;
         a.score = 0;
 
-        // if("leaderboard" in localStorage)
-        // {
-        //   leaderboardArray = JSON.parse(localStorage.getItem("leaderboard"));
+        if("leaderboard" in localStorage)
+        {
+          leaderboardArray = JSON.parse(localStorage.getItem("leaderboard"));
          
-        // }
+        }
         leaderboardArray.push(a);
-        //localStorage.setItem("leaderboard",JSON.stringify(leaderboardArray));
+        localStorage.setItem("leaderboard",JSON.stringify(leaderboardArray));
       }
     if(n === 2)
      {
        a.name = player2_name;
        a.score = 0;
 
-      //  if("leaderboard" in localStorage)
-      //  {
-      //    leaderboardArray = JSON.parse(localStorage.getItem("leaderboard"));
-      //  }
+       if("leaderboard" in localStorage)
+       {
+         leaderboardArray = JSON.parse(localStorage.getItem("leaderboard"));
+       }
        leaderboardArray.push(a);
-       //localStorage.setItem("leaderboard",JSON.stringify(leaderboardArray));
+       localStorage.setItem("leaderboard",JSON.stringify(leaderboardArray));
      }    
 
 
@@ -210,7 +210,9 @@ function startDraw()
           
          
      
-           leaderboardArray.sort(compare);
+         leaderboardArray.sort(compare);
+         localStorage.setItem("leaderboard",JSON.stringify(leaderboardArray));
+
          leaderboard.innerHTML = "<div class = 'header left'>Player Name</div><div class = 'header right'>Score</div>";
          for(var i = leaderboardArray.length-1;i >= 0;i--)
          {
