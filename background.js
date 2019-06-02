@@ -3,8 +3,8 @@ class background
    constructor(screen_width,screen_height)
    { 
      this.squareArr = [];
-     this.n_column = screen_width / 100;
-     this.n_row = screen_height/100;
+     this.n_column = screen_width / 100 + 1;
+     this.n_row = screen_height/100 + 1;
      this.angle = 0;
    }
 
