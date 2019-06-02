@@ -27,18 +27,18 @@ class block
         ctx.restore();
         ctx.closePath();
        }
-    //    else if(this.type === 2)
-    //    {  
-    //        var image1 = new Image(this.width,this.height);
-    //        image1.src = "./assets/horlicks.jpg";
-    //        image1.custom = {x:this.x,y:this.y};
-    //        image1.onload = 
-    //        function()
-    //        {
-    //         ctx.drawImage(image1,this.custom.x,this.custom.y,this.width,this.height);
-    //        };
+       else if(this.type === 2)
+       {  
+           var image1 = new Image(this.width,this.height);
+           image1.src = "./assets/horlicks.jpg";
+           image1.custom = {x:this.x,y:this.y};
+           image1.onload = 
+           function()
+           {
+            ctx.drawImage(image1,this.custom.x,this.custom.y,this.width,this.height);
+           };
 
-    //    } 
+       } 
        else if(this.type === 3)
        {
         var image2 = new Image(this.width,this.height);

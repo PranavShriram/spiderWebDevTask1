@@ -67,8 +67,8 @@ function startGame(n)
           ctx.beginPath();
           ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
           ctx.fillRect(0,0,canvas.width,canvas.height);
-          // background1.angle += Math.PI/60;
-          // background1.draw_background(ctx);
+          background1.angle += Math.PI/60;
+          background1.draw_background(ctx);
     }
 
     function keydownListener(e)
@@ -89,7 +89,7 @@ function startGame(n)
         document.removeEventListener('keyup',keyUpListener);
         game1.state = "pause";
     
-    }
+    } right = false;
 
     function playGame()
     {
@@ -191,21 +191,27 @@ function startDraw()
             player1.incrementScore(1);
             a.score = player1.score;
           }
-          //  if(game1.time % 500 === 0)
-          // {
-          //   var block1 = new block(40,40,400,0,false,2);
-          //   rectOnScreen.push(block1);
-          // }
            if(game1.time % 500 === 0)
+          {
+            var block1 = new block(40,40,400,0,false,2);
+            rectOnScreen.push(block1);
+          }
+           if(game1.time % 1300=== 0)
           {
             var block1 = new block(40,40,550,0,false,3);
             rectOnScreen.push(block1);
           }
         }
+         if(game1.time === game1.flightPowerStartTime + 300)
+         {
+           game1.flightPowerStatus = false;
+           sprite1.rotationSpeed -= Math.PI/270;
+         } 
          if(game1.time === game1.horlicksPowerStartTime + 300)
          {
            game1.horlicksPowerStatus = false;
-           sprite1.rotationSpeed -= Math.PI/270;
+           sprite1.orbRadius -= 10;
+
          } 
           
          
@@ -255,20 +261,32 @@ function startDraw()
         else if(game1.powerMeterStatus === false && sprite1.angleBetweenOrbs !== Math.PI)
         {
             sprite1.unwrap();
-          
+            
         }
         else if(sprite1.collisionDetection(rectOnScreen) >= 0) 
         { 
 
           if(rectOnScreen[sprite1.collisionDetection(rectOnScreen)].type == 3)
           {
-                game1.horlicksPowerStatus = true;
-                game1.horlicksPowerStartTime = game1.time;
+                game1.flightPowerStatus = true;
+                game1.flightPowerStartTime = game1.time;
                 sprite1.rotationSpeed += Math.PI/270;
                 rectOnScreen.splice(sprite1.collisionDetection(rectOnScreen),1);
           }
-          else
+          else if(rectOnScreen[sprite1.collisionDetection(rectOnScreen)].type == 2)
           {
+                game1.horlicksPowerStatus = true;
+                game1.horlicksPowerStartTime = game1.time;
+                sprite1.orbRadius += 10;
+                rectOnScreen.splice(sprite1.collisionDetection(rectOnScreen),1);
+          }
+          else
+          {        if(game1.horlicksPowerStatus)
+                   {
+                    rectOnScreen.splice(sprite1.collisionDetection(rectOnScreen),1);
+                   } 
+                   else
+                   {
                   console.log(rectOnScreen[sprite1.collisionDetection(rectOnScreen)].type);
                   dy = 0;
                   document.removeEventListener('keydown',keydownListener);
@@ -315,7 +333,7 @@ function startDraw()
                     game_sidebar.style.display = 'none';
                     leaderboard.style.display = 'none';
                   }  
-          }       
+          }  }     
         }
 
         
@@ -361,7 +379,7 @@ function startDraw()
     var power_meter_filled = document.querySelector('.power_meter_filled');
 
     //Initialising background
-    //var background1 = new background(canvas.width,canvas.height);
+    var background1 = new background(canvas.width,canvas.height);
 
     //Starting new game
     var game1 = new game();
