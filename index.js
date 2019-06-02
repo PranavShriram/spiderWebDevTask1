@@ -67,8 +67,8 @@ function startGame(n)
           ctx.beginPath();
           ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
           ctx.fillRect(0,0,canvas.width,canvas.height);
-          background1.angle += Math.PI/60;
-          background1.draw_background(ctx);
+          // background1.angle += Math.PI/60;
+          // background1.draw_background(ctx);
     }
 
     function keydownListener(e)
@@ -107,7 +107,7 @@ function startGame(n)
         clockWise = false;  
     }
     function drawScore()
-    {
+
       // ctx.fillStyle = "white";
       // ctx.font = '24px serif';
       // ctx.fillText('Score',800,100)
@@ -379,7 +379,7 @@ function startDraw()
     var power_meter_filled = document.querySelector('.power_meter_filled');
 
     //Initialising background
-    var background1 = new background(canvas.width,canvas.height);
+   // var background1 = new background(canvas.width,canvas.height);
 
     //Starting new game
     var game1 = new game();
