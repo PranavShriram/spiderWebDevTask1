@@ -107,7 +107,7 @@ function startGame(n)
         clockWise = false;  
     }
     function drawScore()
-
+{
       // ctx.fillStyle = "white";
       // ctx.font = '24px serif';
       // ctx.fillText('Score',800,100)
